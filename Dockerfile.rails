@@ -1,0 +1,20 @@
+# Dockerfile.rails
+FROM ruby:3.1.2 AS rails-app
+
+LABEL author.name="Danimar Henrique Varisa"
+LABEL author.email="danimar@inovadora.com.br"
+LABEL version="1.0"
+LABEL description="Rails API App with Docker, PostgreSQL, Redis, Nginx, Grafana, Prometheus and Sidekiq"
+
+# Default directory
+ENV INSTALL_PATH /opt/app
+RUN mkdir -p $INSTALL_PATH
+
+# Install rails
+RUN gem install rails bundler
+
+#RUN chown -R user:user /opt/app
+WORKDIR /opt/app
+
+# Run a shell
+CMD ["/bin/sh"]
