@@ -8,6 +8,9 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  #Add rails-app to the permission list
+  config.hosts << "rails-app"
+
   # Do not eager load code on boot.
   config.eager_load = false
 
