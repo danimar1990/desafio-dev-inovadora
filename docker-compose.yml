@@ -5,8 +5,9 @@ services:
   postgres:
     image: postgres:14.2
     environment:
-      POSTGRES_USER: test_db_user
-      POSTGRES_PASSWORD: test_db_password
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports: 
       - '5432:5432'
     volumes:
