@@ -30,6 +30,12 @@ gem "bcrypt", "~> 3.1.7"
 # Middleware that will make Rack-based apps CORS compatible
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 
+# Modern encryption for Ruby and Rails
+gem "lockbox", "~> 0.6.8"
+
+# Securely search encrypted database fields
+gem "blind_index", "~> 2.3"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
@@ -44,6 +50,7 @@ end
 group :development do
   # Provides a better error page for Rails and other Rack apps
   gem "better_errors"
+  
+  # Provides the Binding#of_caller method
   gem "binding_of_caller"
 end
-
