@@ -27,7 +27,7 @@ module RailsApp
     config.logger    = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
 
     config.cache_store = :redis_store, ENV['CACHE_URL'],
-                         { namespace: 'drkiq::cache' }
+                         { namespace: 'rails-app::cache' }
 
     config.active_job.queue_adapter = :sidekiq
     config.api_only = true
