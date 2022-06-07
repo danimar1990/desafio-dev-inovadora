@@ -4,7 +4,7 @@ FROM ruby:3.1.2 AS rails-app
 LABEL author.name="Danimar Henrique Varisa"
 LABEL author.email="danimar@inovadora.com.br"
 LABEL version="1.0"
-LABEL description="Rails API App with Docker, PostgreSQL, Redis, Nginx, Grafana, Prometheus and Sidekiq"
+LABEL description="Rails API App with Docker, PostgreSQL, Redis, Nginx and Sidekiq"
 
 # Default directory
 ENV INSTALL_PATH /opt/app
