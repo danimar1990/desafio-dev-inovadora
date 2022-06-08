@@ -39,7 +39,8 @@ class CreateBreeds < ActiveRecord::Migration[7.0]
       t.integer :hypoallergenic
       t.string :reference_image_id
       t.string :image, array: true
-
+      t.references :user, null: false, foreign_key: true
+      
       t.timestamps
     end
   end

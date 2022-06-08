@@ -6,7 +6,7 @@ module Api
       require 'rest-client'
       require 'open-uri'
 
-      before_action :authorized, :set_breed, only: %i[ show update destroy ]
+      before_action :authorize, :set_breed, only: %i[ show update destroy ]
 
       def index
         #render json: Breed.all
