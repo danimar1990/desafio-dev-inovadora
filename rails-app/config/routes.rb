@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'breeds', to: 'breeds#show_json_breed'
-  resources :breeds
-  resource :users, only: [:create]
-  post "/login", to: "users#login"
-  get "/auto_login", to: "users#auto_login"
+  namespace :api do
+    namespace :v1 do
+      get 'breeds', to: 'breeds#index'
+      get 'save', to: 'breeds#get_api_data'
+      resources :breeds
+    end
+  end
 end
