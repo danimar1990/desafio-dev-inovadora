@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   
-  resource :users, only: [:create]
-  post "/login", to: "users#login"
+	resource :users, only: [:create]
+	post "/login", to: "users#login"
+	delete '/logout/:id' => 'users#logout'
 
-  namespace :api do
-    namespace :v1 do
-      get 'breeds', to: 'breeds#index'
-      get 'save', to: 'breeds#get_api_data'
-      resources :breeds
-    end
-  end
+	namespace :api do
+		namespace :v1 do
+			# resources :breeds
+			get "/breeds", to: "breeds#index"
+			post "/breeds/save", to: "breeds#create"
+		end
+	end
 
 end

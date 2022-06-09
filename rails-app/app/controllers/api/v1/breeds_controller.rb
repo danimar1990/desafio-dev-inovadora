@@ -1,26 +1,22 @@
-module Api
-  module V1
-    class BreedsController < ApplicationController
+class Api::V1::BreedsController < ApplicationController
 
-      require 'json'
-      require 'rest-client'
-      require 'open-uri'
+	require 'rest-client'
 
-      before_action :authorize, :set_breed, only: %i[ show update destroy ]
+	before_action :authorize
+	
+	def index
+		url = 'https://api.thecatapi.com/v1/breeds'
+		response = RestClient.get(url)
+		render json: response
+	end
 
-      def index
-        #render json: Breed.all
-        url = 'https://api.thecatapi.com/v1/breeds'
-        response = RestClient.get(url)
-        render json: response
-      end
+	def create
+		response = RestClient.get 'https://api.thecatapi.com/v1/breeds'
+		json = JSON.parse response
+		json['data'].map do |b|
+			Breed.create!(:name => b['name'])
+		end
 
-      def get_api_data
-        url = 'https://api.thecatapi.com/v1/breeds'
-        response = RestClient.get(url)
-        render json: response
-      end
+	end
 
-    end
-  end
 end
