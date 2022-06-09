@@ -1,6 +1,6 @@
 class CreateBreeds < ActiveRecord::Migration[7.0]
   def change
-    create_table :breeds, id: false do |t|
+    create_table :breeds do |t|
       t.string :weight
       t.string :shortname
       t.string :name

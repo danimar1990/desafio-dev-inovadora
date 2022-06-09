@@ -25,6 +25,7 @@ class ApplicationController < ActionController::API
     end
 
     def authorize
-        render json: {message: 'You need to be logged in to access this endpoint!'}, status: :unauthorized unless authorized_user
+        render json: {message: 'You are not logged or your API KEY is missing or invalid!'},
+		status: :unauthorized unless authorized_user
     end
 end

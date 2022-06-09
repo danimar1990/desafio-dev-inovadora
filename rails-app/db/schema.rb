@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_190037) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "breeds", id: false, force: :cascade do |t|
+  create_table "breeds", force: :cascade do |t|
     t.string "weight"
     t.string "shortname"
     t.string "name"
