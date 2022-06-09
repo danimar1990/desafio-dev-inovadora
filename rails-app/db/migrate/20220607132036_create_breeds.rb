@@ -1,7 +1,7 @@
 class CreateBreeds < ActiveRecord::Migration[7.0]
   def change
     create_table :breeds, id: false do |t|
-      t.string :weight, array: true
+      t.string :weight
       t.string :shortname
       t.string :name
       t.string :cfa_url
@@ -38,8 +38,8 @@ class CreateBreeds < ActiveRecord::Migration[7.0]
       t.string :wikipedia_url
       t.integer :hypoallergenic
       t.string :reference_image_id
-      t.string :image, array: true
-      t.references :user, null: false, foreign_key: true
+      t.string :image
+      #t.references :user, null: true, foreign_key: true
       
       t.timestamps
     end
