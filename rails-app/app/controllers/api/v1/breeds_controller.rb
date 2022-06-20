@@ -11,6 +11,9 @@ class Api::V1::BreedsController < ApplicationController
 
 	def show
 		render json: @breed
+
+	rescue ActiveRecord::RecordNotFound
+		render status: 404, json: {}
 	end
 
 	def create

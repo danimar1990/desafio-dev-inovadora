@@ -1,6 +1,6 @@
 require 'rails_helper' 
 
-describe User do 
+describe 'Novo usuário' do 
 	it "é inválido caso já exista um e-mail igual" do 
 		user = User.create(
 					username: 'danimar',
